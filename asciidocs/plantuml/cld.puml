@@ -28,7 +28,7 @@ class Booking{
 - course : Course
 }
 
-enum Class {
+enum Group {
 ANFAENGER
 KOENNER
 PROFIS
@@ -40,5 +40,5 @@ Skistudent "1" *--> "*" Booking
 Booking "*" *--> "1" Course
 Skiteacher --|> Person
 Skistudent --|> Person
-Course "1" *--> "1" Class
+Course "1" *--> "1" Group
 @enduml
