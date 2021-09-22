@@ -1,0 +1,114 @@
+@startuml
+
+abstract class Person {
+- id : long
+- firstname : String
+- lastname : String
+- age : int
+}
+
+class Skiteacher {
+- salary : int
+}
+
+class Skistudent{
+}
+
+class Course{
+- id : long
+- name : String
+- member : int
+- aGroup : Group
+- location : Location
+- teacher : Skiteacher
+}
+
+class Location{
+- id : long
+- name : String
+- numberOfSkilifts : int
+- kilometersOfSlopes : int
+}
+
+class Booking{
+- id : long
+- student : Skistudent
+- course : Course
+}
+
+'class SkistudentRepository{
+'+ skistudentList : List<Skistudent>
+'}
+'
+'class SkiteacherRepository{
+'+ skiteacherList : List<Skiteacher>
+'}
+'
+'class CourseRepository{
+'+ courseList : List<Course>
+'}
+'
+'class LocationRepository{
+'+ locationList : List<Location>
+'}
+'
+'class SkistudentService{
+'+ repoCourse : CourseRepository
+'+ repoTeacher : SkiteacherRepository
+'+ repoStudent : SkistudentRepository
+'}
+'
+'class SkiteacherService{
+'+ repoCourse : CourseRepository
+'+ repoTeacher : SkiteacherRepository
+'+ repoStudent : SkistudentRepository
+'}
+'
+'class CourseService{
+'+ repoCourse : CourseRepository
+'+ repoTeacher : SkiteacherRepository
+'+ repoStudent : SkistudentRepository
+'}
+'
+'class LocationService{
+'+ repoLocation : LocationRepository
+'}
+
+'interface Repository
+
+enum Class {
+ANFAENGER
+KOENNER
+PROFIS
+UNBEKANNT
+}
+
+Skiteacher "1" *--> "*" Course
+Skistudent "1" *--> "*" Booking
+Booking "*" *--> "1" Course
+Skiteacher --|> Person
+Skistudent --|> Person
+'SkiteacherRepository --> Repository
+'SkistudentRepository --> Repository
+'LocationRepository --> Repository
+Course "1" *--> "1" Class
+Course "*" *--> "1" Location
+
+'SkiteacherRepository "1" *--> "*" Skiteacher
+'SkistudentRepository "1" *--> "*" Skistudent
+'CourseRepository "1" *--> "*" Course
+'LocationRepository "1" *--> "*" Location
+
+'SkiteacherService "1" *--> "1" SkiteacherRepository
+'SkiteacherService "1" *--> "1" CourseRepository
+
+'SkistudentService "1" *--> "1" SkistudentRepository
+'SkistudentService "1" *--> "1" CourseRepository
+
+'CourseService "1" *--> "1" CourseRepository
+'CourseService "1" *--> "1" LocationRepository
+'
+'LocationService "1" *--> "1" LocationRepository
+
+
+@enduml
