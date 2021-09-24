@@ -35,8 +35,8 @@ PROFIS
 UNBEKANNT
 }
 
-Skiteacher "1" *--> "*" Course
-Skistudent "1" *--> "*" Booking
+Course "1" *--> "*" Skiteacher
+Booking "1" *--> "*" Skistudent
 Booking "*" *--> "1" Course
 Skiteacher --|> Person
 Skistudent --|> Person
