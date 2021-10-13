@@ -17,5 +17,20 @@ Accept: application/json
 ###
 
 
+POST http://localhost:8080/api/skistudent/addSkistuden
+Content-Type: application/json
 
+{
+  "firstname": "Pia",
+  "lastname": "Sanchez",
+  "age": 11
+}
+
+###
+
+
+GET http://localhost:8080/api/skistudent/getAll
+Accept: application/json
+
+###
 
