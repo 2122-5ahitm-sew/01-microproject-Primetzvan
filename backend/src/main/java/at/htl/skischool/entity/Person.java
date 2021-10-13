@@ -1,4 +1,4 @@
-package at.htl.entity;
+package at.htl.skischool.entity;
 
 //import javax.xml.bind.annotation.XmlRootElement;
 

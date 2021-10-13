@@ -1,8 +1,8 @@
 package at.htl.skischool.repository;
 
-import at.htl.entity.Course;
-import at.htl.entity.Group;
-import at.htl.entity.Skiteacher;
+import at.htl.skischool.entity.Course;
+import at.htl.skischool.entity.Group;
+import at.htl.skischool.entity.Skiteacher;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 

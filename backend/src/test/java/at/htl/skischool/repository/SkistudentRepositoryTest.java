@@ -1,6 +1,6 @@
 package at.htl.skischool.repository;
 
-import at.htl.entity.Skistudent;
+import at.htl.skischool.entity.Skistudent;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;
 

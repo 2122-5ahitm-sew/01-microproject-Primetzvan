@@ -1,4 +1,4 @@
-package at.htl.entity;
+package at.htl.skischool.entity;
 
 public enum Group {
 

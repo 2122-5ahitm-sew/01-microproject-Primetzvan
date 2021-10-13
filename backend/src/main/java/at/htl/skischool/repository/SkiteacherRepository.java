@@ -1,6 +1,6 @@
 package at.htl.skischool.repository;
 
-import at.htl.entity.Skiteacher;
+import at.htl.skischool.entity.Skiteacher;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
