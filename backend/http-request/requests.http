@@ -1,0 +1,21 @@
+POST http://localhost:8080/api/skiteacher/addSkiteacher
+Content-Type: application/json
+
+{
+  "firstname": "Stella",
+  "lastname": "Müller",
+  "age": 30,
+  "salary": 1500
+}
+
+###
+
+
+GET http://localhost:8080/api/skiteacher/getAll
+Accept: application/json
+
+###
+
+
+
+
