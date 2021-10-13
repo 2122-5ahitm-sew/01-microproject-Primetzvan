@@ -9,7 +9,7 @@ public class Skistudent extends Person{
         super(firstname, lastname, age);
     }
 
-    protected Skistudent(Long id, String firstname, String lastname, int age) {
+    public Skistudent(Long id, String firstname, String lastname, int age) {
         super(id, firstname, lastname, age);
     }
 
