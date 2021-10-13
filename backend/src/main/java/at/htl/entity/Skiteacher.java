@@ -12,7 +12,7 @@ public class Skiteacher extends Person {
         this.salary = salary;
     }
 
-    protected Skiteacher(Long id, String firstname, String lastname, int age, int salary) {
+    public Skiteacher(Long id, String firstname, String lastname, int age, int salary) {
         super(id, firstname, lastname, age);
         this.salary = salary;
     }
