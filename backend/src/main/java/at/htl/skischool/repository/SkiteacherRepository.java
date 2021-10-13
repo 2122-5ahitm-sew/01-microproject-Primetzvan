@@ -1,4 +1,4 @@
-package at.htl.repository;
+package at.htl.skischool.repository;
 
 import at.htl.entity.Skiteacher;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;

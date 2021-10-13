@@ -23,7 +23,7 @@ public class Booking extends PanacheEntity {
         this.course = course;
     }
 
-    public Booking(Long id, Skistudent student, Course course) {
+    protected Booking(Long id, Skistudent student, Course course) {
         this.student = student;
         this.course = course;
     }

@@ -7,25 +7,25 @@ import javax.persistence.*;
 @Entity
 public class Course extends PanacheEntity {
 
-    private String name;
-    private int member;
-    @Enumerated(EnumType.ORDINAL)
-    private Group aGroup;
+  private String name;
+  private int member;
+  @Enumerated(EnumType.ORDINAL)
+  private Group aGroup;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
-    @JoinColumn(name = "Skiteacher_ID")
-    private Skiteacher skiteacher;
+  @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
+  @JoinColumn(name = "Skiteacher_ID")
+  private Skiteacher skiteacher;
 
-    public Course() {
-    }
+  public Course() {
+  }
 
-    public Course(String name, Group group, Skiteacher skiteacher) {
-        this.name = name;
-        this.skiteacher = skiteacher;
-        this.aGroup = group;
-    }
+  public Course(String name, Group group, Skiteacher skiteacher) {
+    this.name = name;
+    this.skiteacher = skiteacher;
+    this.aGroup = group;
+  }
 
-  public Course(Long id, String name, int member, Group aGroup, Skiteacher skiteacher) {
+  protected Course(Long id, String name, int member, Group aGroup, Skiteacher skiteacher) {
     this.id = id;
     this.name = name;
     this.member = member;
@@ -50,43 +50,43 @@ public class Course extends PanacheEntity {
   }
 
   public String getName() {
-        return name;
-    }
+    return name;
+  }
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public int getMember() {
-        return member;
-    }
+  public int getMember() {
+    return member;
+  }
 
-    public void setMember(int member) {
-        this.member = member;
-    }
+  public void setMember(int member) {
+    this.member = member;
+  }
 
-    public Group getaClass() {
-        return aGroup;
-    }
+  public Group getaClass() {
+    return aGroup;
+  }
 
-    public void setaClass(Group aGroup) {
-        this.aGroup = aGroup;
-    }
+  public void setaClass(Group aGroup) {
+    this.aGroup = aGroup;
+  }
 
-    public Skiteacher getSkiteacher() {
-        return skiteacher;
-    }
+  public Skiteacher getSkiteacher() {
+    return skiteacher;
+  }
 
-    public void setSkiteacher(Skiteacher skiteacher) {
-        this.skiteacher = skiteacher;
-    }
+  public void setSkiteacher(Skiteacher skiteacher) {
+    this.skiteacher = skiteacher;
+  }
 
-    @Override
-    public String toString() {
-        return "Kurs " +
-                "namens " + name +
-                ", hat " + member +
-                " teilnehmer" +
-                "\n";
-    }
+  @Override
+  public String toString() {
+    return "Kurs " +
+      "namens " + name +
+      ", hat " + member +
+      " teilnehmer" +
+      "\n";
+  }
 }

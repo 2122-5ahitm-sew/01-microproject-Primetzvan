@@ -1,7 +1,6 @@
-package at.htl.skischool.entity;
+package at.htl.skischool.repository;
 
 import at.htl.entity.Skiteacher;
-import at.htl.repository.SkiteacherRepository;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.test.junit.QuarkusTest;
 import org.junit.jupiter.api.Test;

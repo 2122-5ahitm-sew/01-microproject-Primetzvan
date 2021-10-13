@@ -1,6 +1,6 @@
-package at.htl.repository;
+package at.htl.skischool.repository;
 
-import at.htl.entity.Skistudent;
+import at.htl.entity.Booking;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -9,9 +9,9 @@ import java.util.List;
 
 @ApplicationScoped
 @Transactional
-public class SkistudentRepository implements PanacheRepository<Skistudent> {
+public class BookingRepository implements PanacheRepository<Booking> {
 
-  public void save(Skistudent entity){
+  public void save(Booking entity){
 
     if (entity.getId() != null){
       getEntityManager().merge(entity);
@@ -22,23 +22,25 @@ public class SkistudentRepository implements PanacheRepository<Skistudent> {
 
   public void delete(long id){
 
-    Skistudent skistudent = findById(id);
+    Booking booking = findById(id);
 
-    if (skistudent != null){
-      delete(skistudent);
+    if (booking != null){
+      delete(booking);
     }
 
   }
 
-  public List<Skistudent> findAllSkistudent(){
-    var query = getEntityManager().createQuery("Select s from Skistudent s", Skistudent.class);
+  public List<Booking> findAllBooking(){
+    var query = getEntityManager().createQuery("Select b from Booking b", Booking.class);
     return query.getResultList();
   }
 
-  public Skistudent findById(long id){
+  public Booking findById(long id){
+
 
     return find("id", id).firstResult();
 
   }
+
 
 }
