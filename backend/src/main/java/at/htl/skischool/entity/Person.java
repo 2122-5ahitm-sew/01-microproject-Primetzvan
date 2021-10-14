@@ -14,7 +14,6 @@ public abstract class Person extends PanacheEntity {
     private String lastname;
     private int age;
 
-
     public Person() {
     }
 
