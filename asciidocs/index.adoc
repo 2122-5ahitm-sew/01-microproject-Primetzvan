@@ -21,3 +21,8 @@ Diese Kurse werden von Skilehrern gehalten.
 ----
 include::plantuml/cld.puml[]
 ----
+
+== Aktueller Stand
+
+- keycloak hinzugefügt
+- qute in bearbeitung
