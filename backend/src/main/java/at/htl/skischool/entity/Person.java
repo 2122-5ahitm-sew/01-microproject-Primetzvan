@@ -5,8 +5,10 @@ package at.htl.skischool.entity;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
+@XmlRootElement
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class Person extends PanacheEntity {
 

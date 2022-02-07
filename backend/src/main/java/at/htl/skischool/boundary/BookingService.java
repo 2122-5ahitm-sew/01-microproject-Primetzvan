@@ -10,7 +10,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/api/booking")
+@Path("/booking")
 @ApplicationScoped
 public class BookingService {
 

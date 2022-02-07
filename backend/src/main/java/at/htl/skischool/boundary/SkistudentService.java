@@ -2,20 +2,27 @@ package at.htl.skischool.boundary;
 
 import at.htl.skischool.entity.Skistudent;
 import at.htl.skischool.repository.SkistudentRepository;
+import io.quarkus.security.identity.SecurityIdentity;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 import java.util.List;
+import java.util.Map;
 
-@Path("/api/skistudent")
+@Path("/skistudent")
 @ApplicationScoped
 public class SkistudentService {
 
   @Inject
   SkistudentRepository skistudentRepository;
+
+  @Inject
+  SecurityIdentity securityIdentity;
 
   @POST
   @Path("addSkistuden")
@@ -38,5 +45,14 @@ public class SkistudentService {
     return this.skistudentRepository.findById(id);
   }
 
+  @GET
+  @Path("students")
+  @RolesAllowed("student")
+  @Produces(MediaType.APPLICATION_JSON)
+  public Response getUserInfo() {
+    return Response.ok(
+      Map.of("username", securityIdentity.getPrincipal().getName())
+    ).build();
+  }
 
 }
