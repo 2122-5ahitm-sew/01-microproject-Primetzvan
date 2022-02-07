@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Skistudents</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+    }
+
+    h1 {
+      color: #4695EB;
+      font-size: 2vw;
+      margin: auto;
+      text-align: center;
+    }
+
+    h1 b {
+      color: #be9100;
+    }
+    table {
+      margin: 2vh auto;
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      width: 25%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+<h1>Skistudent</h1>
+<table>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+  {#for skistudent in skistudents}
+    <tr>
+    <td>{skistudent.firstname}</td>
+    <td>{skistudent.lastname}</td>
+    <td>{skistudent.age}</td>
+    </tr>
+  {/for}
+</table>
+
+</body>
+</html>

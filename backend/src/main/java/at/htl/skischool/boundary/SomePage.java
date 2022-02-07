@@ -1,4 +1,4 @@
-package at.htl.skischool;
+package at.htl.skischool.boundary;
 
 import io.quarkus.qute.Template;
 import io.quarkus.qute.TemplateInstance;

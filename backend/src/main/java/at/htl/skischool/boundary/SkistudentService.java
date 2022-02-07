@@ -39,7 +39,7 @@ public class SkistudentService {
   @GET
   @Produces(MediaType.TEXT_HTML)
   public TemplateInstance getPage() {
-    return Templates.skistudent(skistudentList);
+    return Templates.skistudent(skistudentRepository.findAllSkistudent());
   }
 
   @POST

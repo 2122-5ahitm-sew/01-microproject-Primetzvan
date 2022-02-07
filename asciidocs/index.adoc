@@ -25,4 +25,4 @@ include::plantuml/cld.puml[]
 == Aktueller Stand
 
 - keycloak hinzugefügt
-- qute in bearbeitung
+- qute: http://localhost:8080/api/skistudent
