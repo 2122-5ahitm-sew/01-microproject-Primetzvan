@@ -5,5 +5,5 @@ Diese Kurse werden von Skilehrern gehalten.
 
 ## Aktueller Stand
 
-- keycloak hinzugefügt (in Skistudent und Skilehrer)
+- keycloak hinzugefügt (in Skistudent und Skiteacher)
 - qute: http://localhost:8080/api/skistudent
