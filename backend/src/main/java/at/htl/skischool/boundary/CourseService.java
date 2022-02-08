@@ -3,6 +3,7 @@ package at.htl.skischool.boundary;
 import at.htl.skischool.entity.Course;
 import at.htl.skischool.repository.CourseRepository;
 
+import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
@@ -18,6 +19,7 @@ public class CourseService {
   CourseRepository courseRepository;
 
   @POST
+  @RolesAllowed("teacher")
   @Path("addCourse")
   @Transactional
   public void addCourse(Course course){

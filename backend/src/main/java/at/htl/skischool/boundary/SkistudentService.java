@@ -50,6 +50,7 @@ public class SkistudentService {
   }
 
   @GET
+  @RolesAllowed("teacher")
   @Path("getAll")
   @Produces({MediaType.APPLICATION_JSON})
   public List<Skistudent> getAll(){

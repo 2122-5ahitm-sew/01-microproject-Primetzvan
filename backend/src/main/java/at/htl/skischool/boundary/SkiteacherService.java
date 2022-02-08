@@ -25,6 +25,7 @@ public class SkiteacherService {
   SecurityIdentity securityIdentity;
 
   @POST
+  @RolesAllowed("teacher")
   @Path("addSkiteacher")
   @Transactional
   public void addSkiteacher(Skiteacher skiteacher){
@@ -32,6 +33,7 @@ public class SkiteacherService {
   }
 
   @GET
+  @RolesAllowed("teacher")
   @Path("getAll")
   @Produces({MediaType.APPLICATION_JSON})
   public List<Skiteacher> getAll(){
@@ -39,6 +41,7 @@ public class SkiteacherService {
   }
 
   @GET
+  @RolesAllowed("teacher")
   @Path("getById/{id}")
   @Produces({MediaType.APPLICATION_JSON})
   public Skiteacher getById(@PathParam("id") Long id){
