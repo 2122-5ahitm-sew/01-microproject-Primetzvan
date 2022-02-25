@@ -3,6 +3,10 @@ package at.htl.skischool.boundary;
 import at.htl.skischool.entity.Skiteacher;
 import at.htl.skischool.repository.SkiteacherRepository;
 import io.quarkus.security.identity.SecurityIdentity;
+import org.eclipse.microprofile.graphql.Description;
+import org.eclipse.microprofile.graphql.GraphQLApi;
+import org.eclipse.microprofile.graphql.Name;
+import org.eclipse.microprofile.graphql.Query;
 
 import javax.annotation.security.RolesAllowed;
 import javax.enterprise.context.ApplicationScoped;
@@ -16,6 +20,9 @@ import java.util.Map;
 
 @Path("/skiteacher")
 @ApplicationScoped
+@Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+@GraphQLApi
 public class SkiteacherService {
 
   @Inject
@@ -40,6 +47,12 @@ public class SkiteacherService {
     return this.skiteacherRepository.findAllSkiteacher();
   }
 
+  @Query("allTeachers")
+  @Description("Get all Teachers")
+  public List<Skiteacher> getAllTeacher() {
+    return skiteacherRepository.findAllSkiteacher();
+  }
+
   @GET
   @RolesAllowed("teacher")
   @Path("getById/{id}")
@@ -48,7 +61,11 @@ public class SkiteacherService {
     return this.skiteacherRepository.findById(id);
   }
 
-
+  @Query
+  @Description("Get all Teachers by Id")
+  public Skiteacher getTeacherById(@Name("id") Long id) {
+    return skiteacherRepository.findById(id);
+  }
 
   @GET
   @Path("teacher")
@@ -59,5 +76,7 @@ public class SkiteacherService {
       Map.of("username", securityIdentity.getPrincipal().getName())
     ).build();
   }
+
+
 
 }

@@ -51,7 +51,7 @@ Accept: application/json
 POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-client_secret=35c362b5-fcdc-43e0-b3fb-0dfaaae36227&client_id=my-quarkus-service&username=sarah&password=passme&grant_type=password
+client_secret=03c6cfb0-627b-4917-998e-7ddf9875a576&client_id=my-quarkus-service&username=sarah&password=passme&grant_type=password
 
 > {% client.global.set("access_token", response.body.access_token); %}
 
@@ -68,7 +68,7 @@ Authorization: Bearer {{access_token}}
 POST http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/token
 Content-Type: application/x-www-form-urlencoded
 
-client_secret=35c362b5-fcdc-43e0-b3fb-0dfaaae36227&client_id=my-quarkus-service&username=chrissy&password=passme&grant_type=password
+client_secret=03c6cfb0-627b-4917-998e-7ddf9875a576&client_id=my-quarkus-service&username=chrissy&password=passme&grant_type=password
 
 > {% client.global.set("access_token", response.body.access_token); %}
 
